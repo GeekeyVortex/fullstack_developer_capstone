@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="static/style.css">
+  <style>
+    .navbar .loginlink a {
+      font-size: larger;
+      margin-left: 10px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .navbar .loginlink a:hover {
+      color: darkblue;
+    }
+
+    .homepage_links {
+      font-size: larger;
+      margin-right: 10px;
+    }
+
+    .btn-outline-primary {
+      margin-right: 5px;
+    }
+  </style>
+  <script>
+    const logout = async () => {
+      // Include the code for logout here
+    };
+
+    let checkSession = () => {
+      let curr_user = sessionStorage.getItem("username");
+
+      if (curr_user && curr_user !== "") {
+        document.getElementById("loginlogout").innerHTML =
+          '<span class="homepage_links me-3">' + curr_user + '</span>' +
+          '<a class="homepage_links btn btn-sm btn-outline-primary" onclick="logout()" href="/">Logout</a>';
+      } else {
+        document.getElementById("loginlogout").innerHTML =
+          '<a class="homepage_links btn btn-sm btn-outline-primary me-2" href="/login">Login</a>' +
+          '<a class="homepage_links btn btn-sm btn-outline-success" href="/register">Register</a>';
+      }
+    };
+  </script>
+</head>
+<body onload="checkSession()">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+    <div class="container-fluid">
+      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <div class="loginlink d-flex align-items-center" id="loginlogout">
+          </div>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container text-center" style="max-width: 900px; margin-top: 50px;">
+    <h1>About Us</h1>
+    <!-- <p>Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.</p> -->
+    <p>Welcome to Best Cars Dealership, your trusted destination for top-quality vehicles in North America. We specialize in offering a wide range of domestic and imported cars at competitive prices.</p>
+  </div>
+  
+  <div class="container d-flex justify-content-around">
+    <!-- Card 1 -->
+    <div class="card" style="width: 18rem; height: 100%;">
+      <img class="card-img-top" src="/static/prajwal.jpg" alt="Card image cap" style="height: 300px; object-fit: cover;">
+      <div class="card-body">
+        <h3 class="card-title text-center">CEO</h3>
+        <h5 class="card-title text-center">Prajwal Nikalje</h5>
+        <!-- <p class="card-text">an inspiring leader, drives innovation and excellence, ensuring the company's growth with visionary strategies and dedication.</p> -->
+        <p class="card-text">an inspiring leader, drives innovation and excellence, ensuring the company's growth with visionary strategies and dedication.</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="card" style="width: 18rem; height: 100%;">
+      <img class="card-img-top" src="/static/nitin.png" alt="Card image cap" style="height: 300px; object-fit: cover;">
+      <div class="card-body">
+        <h3 class="card-title text-center">Head Manager</h3>
+        <h5 class="card-title text-center">Nitin Natkar</h5>
+        <p class="card-text">an exceptional manager, oversees operations with precision, fostering teamwork and achieving remarkable results through his expertise and leadership.</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="card" style="width: 18rem; height: 100%;">
+      <img class="card-img-top" src="/static/nitin.png" alt="Card image cap" style="height: 300px; object-fit: cover;">
+      <div class="card-body">
+        <h3 class="card-title text-center">HR</h3>
+        <h5 class="card-title text-center">Nitin Natkar</h5>
+        <p class="card-text text-center">an exceptional manager, oversees operations with precision, fostering teamwork and achieving remarkable results through his expertise and leadership.</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+
+  <div class="container">
+
+
+  </div>
+
+  <!-- <div style="display: flex; flex-direction: column;">
+    <div class="card" style="width: 50%; margin-top: 50px; align-self: center;">
+      <img src="static/car_dealership.jpg" class="card-img-top" alt="...">
+      <div class="banner">
+        <h5>Welcome to our Dealerships!</h5>
+        <a href="/dealers" class="btn" style="background-color: aqua; margin:10px">View Dealerships</a>
+      </div>
+    </div>
+  </div> -->
+</body>
+</html>

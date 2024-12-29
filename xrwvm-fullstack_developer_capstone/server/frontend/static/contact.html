@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    {% load static %}
+    <style>
+        .contact-header {
+            background-color: darkturquoise;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .form-section {
+            margin: 2rem 0;
+        }
+
+        .contact-details {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-details h4 {
+            color: darkturquoise;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+        <div class="container-fluid">
+          <h2 style="padding-right: 5%;">Dealerships</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" style="font-size: larger;" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <div class="loginlink d-flex align-items-center" id="loginlogout">
+              </div>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+
+    <!-- <div class="contact-header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Fill out the form below or reach us through the provided contact details.</p>
+    </div> -->
+
+    <div class="container">
+        <!-- Contact Form -->
+        <div class="row form-section">
+            <div class="col-md-8">
+                <h2>Send Us a Message</h2>
+                <form method="POST" action="/submit-contact-form/">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="col-md-4">
+                <div class="contact-details">
+                    <h4>Contact Details</h4>
+                    <p><strong>Address:</strong> Dr. Babasaheb Ambedkar govt boys hostel Chembur, Mumbai</p>
+                    <p><strong>Email:</strong> nikaljeprajwal@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 9876543210</p>
+                    <p><strong>Business Hours:</strong><br> Mon-Fri: 9:00 AM - 6:00 PM<br> Sat: 10:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer class="text-center py-3">
+        <p>&copy; 2024 Best Cars Dealership. All rights reserved.</p>
+    </footer> -->
+</body>
+</html>
