@@ -12,6 +12,11 @@ urlpatterns = [
 
     # path for login
     # path(route='login', view=views.login_user, name='login'),
+    path(route='login', view=views.login_user, name='login'),
+    path('logout', views.logout_view, name='logout'),
+    path('register', views.registration, name='register'),
+    path('get_cars', views.get_cars, name='get_cars'),
+
     # path('about/', TemplateView.as_view(template_name="About.html")),
 
     # path for dealer reviews view
