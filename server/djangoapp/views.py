@@ -121,3 +121,17 @@ def get_cars(request):
         for car_model in car_models
     ]
     return JsonResponse({"CarModels": cars})
+
+
+# djangoapp/views.py
+# from django.http import JsonResponse
+
+# def get_cars(request):
+#     data = {
+#         "CarModels": [
+#             {"CarModel": "Pathfinder", "CarMake": "NISSAN"},
+#             {"CarModel": "A-Class", "CarMake": "Mercedes"},
+#             {"CarModel": "A4", "CarMake": "Audi"},
+#         ]
+#     }
+#     return JsonResponse(data)
